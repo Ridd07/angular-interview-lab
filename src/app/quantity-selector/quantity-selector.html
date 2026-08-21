@@ -1,0 +1,8 @@
+<h2>Quantity Selector</h2>
+<button 
+(click)="decrease()"
+[disabled]="quantity === 0" > - </button>
+
+<span>{{ quantity }}</span>
+
+<button (click)="increase()">+</button>
