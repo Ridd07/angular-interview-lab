@@ -1,1 +1,34 @@
-<app-quantity-selector></app-quantity-selector>
+<mat-toolbar color="primary">
+  <span>My Angular Routing Demo</span>
+
+  <a
+    mat-button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+
+  <a
+    mat-button
+    routerLink="/about"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>info</mat-icon>
+    About
+  </a>
+
+  <a
+    mat-button
+    routerLink="/courses"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>school</mat-icon>
+    Courses
+  </a>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
