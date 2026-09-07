@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { TaskBoard } from './task-board/task-board';
+import { Rating } from './rating/rating';
+
 
 @Component({
   selector: 'app-root',
-  imports: [TaskBoard ],
+  imports: [Rating],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
-
 export class App {
-
+  selectedRating = 0;
+  
+  onRatingChange(value: number){
+    this.selectedRating = value;
+  }
 }

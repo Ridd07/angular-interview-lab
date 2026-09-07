@@ -1,1 +1,6 @@
-<app-task-board></app-task-board>
+<app-rating 
+[rating]="selectedRating"
+(ratingChange)="onRatingChange($event)">
+</app-rating>
+
+<p>Parent rating: {{ selectedRating }}</p>
