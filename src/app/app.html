@@ -1,6 +1,26 @@
-<app-rating 
-[rating]="selectedRating"
-(ratingChange)="onRatingChange($event)">
-</app-rating>
+<h1>Task List</h1>
 
-<p>Parent rating: {{ selectedRating }}</p>
+<div class="task-list">
+
+  @for (task of tasks; track task.title) {
+
+    <div
+      class="task"
+      [appPriority]="task.priority"
+    >
+
+      <h3>{{ task.title }}</h3>
+
+      <p>
+        Priority: {{ task.priority }}
+      </p>
+
+      <p>
+        Duration: {{ task.duration | duration }}
+      </p>
+
+    </div>
+
+  }
+
+</div>

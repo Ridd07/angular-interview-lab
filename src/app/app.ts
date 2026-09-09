@@ -1,18 +1,31 @@
 import { Component } from '@angular/core';
-import { Rating } from './rating/rating';
-
+import { PriorityDirective } from './priority';
+import { DurationPipe } from './duration-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [Rating],
+  imports: [PriorityDirective, DurationPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  selectedRating = 0;
-  
-  onRatingChange(value: number){
-    this.selectedRating = value;
-  }
+
+   tasks = [
+    {
+      title: 'Angular Basics',
+      priority: 'high',
+      duration: 90
+    },
+    {
+      title: 'TypeScript',
+      priority: 'medium',
+      duration: 45
+    },
+    {
+      title: 'HTML',
+      priority: 'low',
+      duration: 30
+    }
+  ];
 }
