@@ -1,0 +1,61 @@
+<section class="settings-panel">
+    <h2>Settings</h2>
+
+    <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" placeholder="Enter your name"
+                aria-describedby="name-error" [attr.aria-invalid]="
+      settingsForm.controls.name.invalid &&
+      settingsForm.controls.name.touched ? 'true' : null
+    " />
+
+            @if (
+            settingsForm.controls.name.invalid &&
+            settingsForm.controls.name.touched
+            ) {
+            <p id="name-error" class="error-message">
+                Name is required.
+            </p>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="Enter your email"
+                aria-describedby="email-error" [attr.aria-invalid]="
+      settingsForm.controls.email.invalid &&
+      settingsForm.controls.email.touched ? 'true' : null
+    " />
+
+            @if (
+            settingsForm.controls.email.invalid &&
+            settingsForm.controls.email.touched
+            ) {
+            <p id="email-error" class="error-message">
+                Please enter a valid email address.
+            </p>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="notifications">Notifications</label>
+            <select id="notifications" formControlName="notifications">
+                <option value="all">All notifications</option>
+                <option value="important">Important only</option>
+                <option value="none">None</option>
+            </select>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label for="darkMode">
+                <input id="darkMode" type="checkbox" formControlName="darkMode" />
+                Enable dark mode
+            </label>
+        </div>
+
+        <button type="submit">Save Settings</button>
+
+    </form>
+</section>
