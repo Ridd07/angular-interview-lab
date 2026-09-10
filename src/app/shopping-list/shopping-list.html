@@ -1,0 +1,73 @@
+<div class="page">
+  <mat-card class="shopping-card">
+    <div class="dashed-box">
+      
+      <div class="header-section">
+        <h2 class="title">Shopping List</h2>
+        <p class="subtitle">Angular Signals Practice</p>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Item name</mat-label>
+          <input
+            matInput
+            [(ngModel)]="itemName"
+            placeholder="e.g. Apple"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="itemPrice"
+            placeholder="e.g. 100"
+          />
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          class="add-btn"
+          (click)="addItem()">
+          Add Item
+        </button>
+      </div>
+
+      <mat-list>
+        @for (item of state.items(); track item.id) {
+          <mat-list-item>
+            <div class="item-row">
+              <div>
+                <strong>{{ item.name }}</strong>
+                <span>₹{{ item.price }}</span>
+              </div>
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="removeItem(item.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </mat-list-item>
+        } @empty {
+          <div class="empty">
+            No items in your shopping list.
+          </div>
+        }
+      </mat-list>
+
+      <div class="summary">
+        <div>
+          <strong>Items:</strong> {{ state.itemCount() }}
+        </div>
+        <div>
+          <strong>Total:</strong> ₹{{ state.total() }}
+        </div>
+      </div>
+
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,93 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Consolas', 'Courier New', monospace, sans-serif;
+}
+
+.shopping-card {
+  width: 540px;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2d2d2d;
+}
+
+.dashed-box {
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 28px 24px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+}
+
+.add-btn {
+  height: 56px;
+  border-radius: 8px !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-row div {
+  display: flex;
+  gap: 20px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.empty {
+  text-align: center;
+  padding: 24px 0;
+  color: #a0a0a0;
+  font-size: 14px;
+}

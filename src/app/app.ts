@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { ShoppingList } from './shopping-list/shopping-list';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [ShoppingList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
